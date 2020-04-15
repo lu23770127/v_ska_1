@@ -1,18 +1,382 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title>WW</title>
-  </head>
-  <body>
-    hi
-    <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <title>Tilda Portfolio</title>
+  <!-- Font -->
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700%7CAllura" rel="stylesheet">
+
+  <!-- Stylesheets -->
+
+  <link href="common-css/bootstrap.css" rel="stylesheet">
+
+  <link href="common-css/ionicons.css" rel="stylesheet">
+
+  <link href="common-css/fluidbox.min.css" rel="stylesheet">
+
+  <link href="03-cv-business/css/styles.css" rel="stylesheet">
+
+  <link href="03-cv-business/css/responsive.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <div id="app">    
+
+    <section class="about-section section">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 center-text">
+            <div class="heading ">
+              <h3><b>{{Name}}</b>
+                <ul class="social-icons">
+                  <li><a href="https://www.linkedin.com/in/lu-ting-yi-531a24193/"><i
+                        class="ion-social-linkedin"></i></a></li>
+                  <li><a href="https://www.instagram.com/_tingyi.lu_/"><i class="ion-social-instagram"></i></a></li>
+                  <li><a href="https://www.facebook.com/profile.php?id=100000078781761"><i
+                        class="ion-social-facebook"></i></a></li>
+                  <li><a href="https://twitter.com/TildaLu1"><i class="ion-social-twitter"></i></a></li>
+                </ul>
+              </h3>
+              <h6 class="font-lite-black">{{Intro}}</h6>
+            </div>
+        </div><!-- row -->
+      </div><!-- container -->
+    </section><!-- about-section -->
+
+    
+    <section class="skills-section section">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 center-text">
+            <div class="heading">
+              <h3><b>{{Name}}</b></h3>
+              <h6 class="font-lite-black"><b>{{intro}}</b></h6>
+            </div>
+          </div><!-- col-sm-12 -->
+
+          <div class="col-sm-12 col-md-6">
+            <h4><b></b></h4>
+            <h6 class="expert">EXPERT</h6>
+
+            <p class="margin-tb-30">Duis non volutpat arcu, eu mollis tellus. Sed finibus aliquam neque sit amet
+              sodales.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla maximus pellentes que velit,
+              quis consequat nulla effi citur at.</p>
+
+            <div class="line-progress margin-b-20" data-prog-percent=".90">
+              <div></div>
+              <p class="progress-title"><b>HTML</b></p>
+            </div>
+
+            <div class="line-progress margin-b-50" data-prog-percent=".85">
+              <div></div>
+              <p class="progress-title"><b>CSS</b></p>
+            </div>
+
+          </div><!-- col-md-6 -->
+
+          <div class="col-sm-12 col-md-6">
+            <h4><b>GRAPHIC DESIGN</b></h4>
+            <h6 class="expert">EXPERT</h6>
+
+            <p class="margin-tb-30">Duis non volutpat arcu, eu mollis tellus. Sed finibus aliquam neque sit amet
+              sodales.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla maximus pellentes que velit,
+              quis consequat nulla effi citur at.</p>
+
+            <div class="line-progress margin-b-20" data-prog-percent=".97">
+              <div></div>
+              <p class="progress-title"><b>PHOTOSHOP</b></p>
+            </div>
+
+            <div class="line-progress margin-b-50" data-prog-percent=".97">
+              <div></div>
+              <p class="progress-title"><b>ILLUSTRATOR</b></p>
+            </div>
+
+          </div><!-- col-md-6 -->
+        </div><!-- row -->
+      </div><!-- container -->
+    </section><!-- skills-section -->
+
+    <section class="radial-progress-section section">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 col-md-6 col-lg-3">
+            <div class="radial-prog-area margin-b-30">
+              <div class="radial-progress" data-prog-percent=".97">
+                <div></div>
+                <h6 class="progress-title">HTML5 & CSS3</h6>
+              </div>
+            </div><!-- radial-prog-area-->
+          </div><!-- col-sm-6-->
+
+          <div class="col-sm-6 col-md-6 col-lg-3">
+            <div class="radial-prog-area margin-b-30">
+              <div class="radial-progress" data-prog-percent=".78">
+                <div></div>
+                <h6 class="progress-title">WEB DESIGN</h6>
+              </div>
+            </div><!-- radial-prog-area-->
+          </div><!-- col-sm-6-->
+
+          <div class="col-sm-6 col-md-6 col-lg-3">
+            <div class="radial-prog-area margin-b-30">
+              <div class="radial-progress" data-prog-percent=".67">
+                <div></div>
+                <h6 class="progress-title">JAVA</h6>
+              </div>
+            </div><!-- radial-prog-area-->
+          </div><!-- col-sm-6-->
+
+          <div class="col-sm-6 col-md-6 col-lg-3">
+            <div class="radial-prog-area margin-b-50">
+              <div class="radial-progress" data-prog-percent=".97">
+                <div></div>
+                <h6 class="progress-title">PHP</h6>
+              </div>
+            </div><!-- radial-prog-area-->
+          </div><!-- col-sm-6-->
+
+        </div><!-- row -->
+      </div><!-- container -->
+    </section><!-- radial-progress-section -->
+
+
+    <section class="experience-section section center-text">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="heading">
+              <h3><b>Work Experience</b></h3>
+              <h6 class="font-lite-black"><b>PREVIOUS JOBS</b></h6>
+            </div>
+          </div><!-- col-sm-3 -->
+          <div class="col-sm-12">
+            <div class="experience margin-b-50">
+              <h4><b>JUNIOR PROJECT MANAGER</b></h4>
+              <h5 class="font-yellow"><b>DESIGN STUDIO</b></h5>
+              <h6 class="font-lite-black margin-t-10">MARCH 2015 - PRESENT</h6>
+              <p class="margin-tb-30">Duis non volutpat arcu, eu mollis tellus. Sed finibus aliquam neque sit amet
+                sodales.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla maximus pellentes que velit,
+                quis consequat nulla effi citur at. Maecenas sed massa tristique.Duis non volutpat arcu,
+                eu mollis tellus. Sed finibus aliquam neque sit amet sodales. </p>
+              <ul class="list margin-b-30">
+                <li><span>Duis non volutpat arcu, eu mollis tellus.</span></li>
+                <li><span>Quis consequat nulla effi citur at.</span></li>
+                <li><span>Sed finibus aliquam neque sit.</span></li>
+              </ul>
+            </div><!-- experience -->
+
+            <div class="experience margin-b-50">
+              <h4><b>WEB MASTER/WEB DEVELOPER</b></h4>
+              <h5 class="font-yellow"><b>DESIGN & WEB STUDIO</b></h5>
+              <h6 class="font-lite-black margin-t-10">APRIL 2014 - FEBRUARY 2015</h6>
+              <p class="margin-tb-30">Duis non volutpat arcu, eu mollis tellus. Sed finibus aliquam neque sit amet
+                sodales.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla maximus pellentes que velit,
+                quis consequat nulla effi citur at. Maecenas sed massa tristique.Duis non volutpat arcu,
+                eu mollis tellus. Sed finibus aliquam neque sit amet sodales. </p>
+              <ul class="list">
+                <li><span>Duis non volutpat arcu, eu mollis tellus.</span></li>
+                <li><span>Quis consequat nulla effi citur at.</span></li>
+                <li><span>Sed finibus aliquam neque sit.</span></li>
+              </ul>
+            </div><!-- experience -->
+
+          </div><!-- col-sm-9 -->
+        </div><!-- row -->
+      </div><!-- container -->
+    </section><!-- experience-section -->
+
+    <section class="education-section section">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 center-text">
+            <div class="heading">
+              <h3><b>Education</b></h3>
+              <h6 class="font-lite-black"><b>ACADEMIC CAREER</b></h6>
+            </div>
+          </div><!-- col-sm-3 -->
+
+          <div class="col-sm-12">
+
+            <div class="education-wrapper margin-b-50">
+              <div class="education right">
+                <h4><b>MASTER DEGREE IN SCIENCE</b></h4>
+                <h5 class="font-yellow"><b>UCLA - SCIENCE AND ENGINEERING</b></h5>
+                <h6 class="font-lite-black margin-t-10">GRADUATED IN MAY 2010(2 YEARS)</h6>
+                <p class="margin-t-30">Duis non volutpat arcu, eu mollis tellus. Sed finibus aliquam neque sit amet
+                  sodales.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla maximus pellentes que velit,
+                  quis consequat nulla effi citur at. Maecenas sed massa tristique.Duis non volutpat arcu,
+                  eu mollis tellus. Sed finibus aliquam neque sit amet sodales. </p>
+              </div><!-- education -->
+
+              <div class="education left">
+                <h4><b>COURSE ON COMPUTER SCIENCE</b></h4>
+                <h5 class="font-yellow"><b>NEW YORK PUBLIC UNIVERSITY</b></h5>
+                <h6 class="font-lite-black margin-t-10">GRADUATED IN MAY 2009(6 MONTHS)</h6>
+                <p class="margin-t-30">Duis non volutpat arcu, eu mollis tellus. Sed finibus aliquam neque sit amet
+                  sodales.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla maximus pellentes que velit,
+                  quis consequat nulla effi citur at. Maecenas sed massa tristique.Duis non volutpat arcu,
+                  eu mollis tellus. Sed finibus aliquam neque sit amet sodales. </p>
+              </div><!-- education -->
+
+              <div class="education right">
+                <h4><b>GRADUATED VALEDICTERIAN</b></h4>
+                <h5 class="font-yellow"><b>PUBLIC COLLEGE</b></h5>
+                <h6 class="font-lite-black margin-t-10">GRADUATED IN MAY 2008(4 YEARS)</h6>
+                <p class="margin-t-30">Duis non volutpat arcu, eu mollis tellus. Sed finibus aliquam neque sit amet
+                  sodales.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla maximus pellentes que velit,
+                  quis consequat nulla effi citur at. Maecenas sed massa tristique.Duis non volutpat arcu,
+                  eu mollis tellus. Sed finibus aliquam neque sit amet sodales. </p>
+              </div><!-- education -->
+            </div><!-- education-wrapper -->
+          </div><!-- col-sm-9 -->
+        </div><!-- row -->
+      </div><!-- container -->
+
+    </section><!-- education-section -->
+
+
+    <section class="quoto-section center-text">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <i class="icon ion-quote"></i>
+            <h3 class="font-yellow"><b>There is no secret to seccess</b></h3>
+            <h3><b>It is the result of preparation, <span class="font-yellow">Hard work</span>,
+                and learnign from the failure.</b></h3>
+          </div><!-- col-sm-12 -->
+        </div><!-- row -->
+      </div><!-- container -->
+    </section><!-- quoto-section -->
+
+
+    <section class="portfolio-section section center-text">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="heading">
+              <h3><b>Portfolio</b></h3>
+              <h6 class="font-lite-black"><b>MY WORK</b></h6>
+            </div>
+          </div><!-- col-sm-12 -->
+
+          <div class="col-sm-12">
+            <div class="portfolioFilter clearfix margin-b-80">
+              <a href="#" data-filter="*" class="current"><b>ALL</b></a>
+              <a href="#" data-filter=".web-design"><b>WEB DESIGN</b></a>
+              <a href="#" data-filter=".branding"><b>BRANDING</b></a>
+              <a href="#" data-filter=".graphic-design"><b>GRAPHIC DESIGN</b></a>
+            </div><!-- portfolioFilter -->
+          </div><!-- col-sm-8 -->
+        </div><!-- row -->
+
+        <div class="portfolioContainer margin-b-50">
+
+          <div class="p-item web-design">
+            <a href="images/portfolio-13-400x400.jpg" data-fluidbox>
+              <img src="images/portfolio-13-400x400.jpg" alt=""></a>
+          </div><!-- p-item -->
+
+          <div class="p-item branding graphic-design">
+            <a href="images/portfolio-14-400x400.jpg" data-fluidbox>
+              <img src="images/portfolio-14-400x400.jpg" alt=""></a>
+          </div><!-- p-item -->
+
+          <div class="p-item web-design">
+            <a href="images/portfolio-15-400x400.jpg" data-fluidbox>
+              <img src="images/portfolio-15-400x400.jpg" alt=""></a>
+          </div><!-- p-item -->
+
+          <div class="p-item graphic-design">
+            <a class="img" href="images/portfolio-16-400x400.jpg" data-fluidbox>
+              <img src="images/portfolio-16-400x400.jpg" alt=""></a>
+          </div><!-- p-item -->
+
+          <div class="p-item branding graphic-design">
+            <a href="images/portfolio-17-400x400.jpg" data-fluidbox>
+              <img src="images/portfolio-17-400x400.jpg" alt=""></a>
+          </div><!-- p-item -->
+
+          <div class="p-item graphic-design web-design">
+            <a href="images/portfolio-18-400x400.jpg" data-fluidbox>
+              <img src="images/portfolio-18-400x400.jpg" alt=""></a>
+          </div><!-- p-item -->
+
+          <div class="p-item  graphic-design branding">
+            <a href="images/portfolio-19-400x400.jpg" data-fluidbox>
+              <img src="images/portfolio-19-400x400.jpg" alt=""></a>
+          </div><!-- p-item -->
+
+          <div class="p-item web-design branding">
+            <a href="images/portfolio-20-400x400.jpg" data-fluidbox>
+              <img src="images/portfolio-20-400x400.jpg" alt=""></a>
+          </div><!-- p-item -->
+
+        </div><!-- portfolioContainer -->
+      </div><!-- container -->
+    </section><!-- portfolio-section -->
+
+    <footer>
+      <p class="copyright">
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        Copyright &copy;
+        <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i
+          class="ion-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+      </p>
+    </footer>
+
+
+    <!-- SCIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script src="common-js/jquery-3.2.1.min.js"></script>
+
+    <script src="common-js/tether.min.js"></script>
+
+    <script src="common-js/bootstrap.js"></script>
+
+    <script src="common-js/isotope.pkgd.min.js"></script>
+
+    <script src="common-js/jquery.waypoints.min.js"></script>
+
+    <script src="common-js/progressbar.min.js"></script>
+
+    <script src="common-js/jquery.fluidbox.min.js"></script>
+
+    <script src="common-js/scripts.js"></script>
+
+  </div>
+  <!-- built files will be auto injected -->
+</body>
+
 </html>
+<script>
+  var app = new Vue({
+    el: "#app",
+    data: {
+      Name: "Tilda Lu",
+      City: "Taichung , Nantun",
+      Birth: "1997-12-26",
+      Email: "lu23770127@gmail.com",
+      School: "National Yunlin University of Science and Technology",
+      Intro: "Hello!我是亭儀，就讀國立雲林科技大學，資訊管理系大四!雖然是讀資訊管理，但是對設計及繪畫也有十足興趣，也有跨學程修習設計學院相關課程，同時自學UI/UX相關設計。大二時曾擔任系學會副會長及美宣，對於活動籌劃及管理有相關基礎經驗。"
+    },
+    methods:{
+
+    },
+  })
+</script>
