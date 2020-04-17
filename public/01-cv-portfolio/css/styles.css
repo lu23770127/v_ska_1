@@ -210,17 +210,27 @@ header .downlad-btn:hover{ -webkit-transform: translateY(-4px); transform: trans
 8. EDUCATION SECTION
 --------------------------------- */
 
-.education-wrapper{ position: relative; }
 
-.education-wrapper:after{ content:''; position: absolute; top: 8px; bottom: 0; left: -51px;
-	width: 2px; background: #ccc; }
+.education-wrapper{ position: relative; overflow: hidden; text-align: center; }
 
-.education-wrapper .education{ position: relative; }
+.education-wrapper:after{ content:''; position: absolute; top: 8px; bottom: 0; left: 50%;
+	margin-left: -1px; width: 2px; background: #ccc; }
 
-.education-wrapper .education:after{ content:''; position: absolute; top: 8px; left: -58px; width: 16px; 
+.education-wrapper .education{ width: 50%; clear: both; position: relative; margin-top: -30px; }
+
+.education-wrapper .education:first-child{ margin-top: 0; } 
+
+.education-wrapper .education.left{ float: left; padding-right: 50px; text-align: right; }
+
+.education-wrapper .education.right{ float: right; padding-left: 50px; text-align: left; }
+
+.education-wrapper .education:after{ content:''; position: absolute; top: 8px; width: 16px; 
 	height: 16px; border-radius: 10px; z-index: 1;
 	box-shadow: 0 0 0 8px rgba(255,171,0, .4); background: #FFAB00; }
 	
+.education-wrapper .education.left:after{ right: -8px; }
+
+.education-wrapper .education.right:after{ left: -8px; }
 	
 /* ---------------------------------
 9. COUNTER SECTION

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>CV - Boxed</title>
+	<title>Tilda's Portfolio</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
@@ -34,11 +34,14 @@
 					<div class="col-md-1 col-lg-2"></div>
 					<div class="col-md-10 col-lg-8">
 						<div class="intro">
-							<div class="profile-img"><img src="https://scontent.ftpe1-1.fna.fbcdn.net/v/t1.0-9/83923505_3035299826482614_5991007983784427520_n.jpg?_nc_cat=104&_nc_sid=85a577&_nc_ohc=ZqIcX6uTkSYAX9tFl8a&_nc_ht=scontent.ftpe1-1.fna&oh=6725091ab49a066846cca9b84c051621&oe=5EBD163E" alt="">
+							<div class="profile-img"><img
+									src="https://scontent.ftpe1-1.fna.fbcdn.net/v/t1.0-9/83923505_3035299826482614_5991007983784427520_n.jpg?_nc_cat=104&_nc_sid=85a577&_nc_ohc=ZqIcX6uTkSYAX9tFl8a&_nc_ht=scontent.ftpe1-1.fna&oh=6725091ab49a066846cca9b84c051621&oe=5EBD163E"
+									alt="">
 							</div>
 							<h3><b>{{profile.About.Name}}</b></h3>
 							<ul class="social-icons">
-								<li v-for="item in profile.Icon.List"><a :href="item.Link"><i :class="item.Class"></i></a></li>
+								<li v-for="item in profile.Icon.List"><a :href="item.Link"><i
+											:class="item.Class"></i></a></li>
 							</ul>
 							<h5 class="font-yellow">
 								<i class="icon ion-ios-location-outline"></i>
@@ -51,7 +54,7 @@
 				</div><!-- row -->
 			</div><!-- container -->
 		</section><!-- intro-section -->
-		
+
 		<section class="about-section section">
 			<div class="container">
 				<div class="row">
@@ -63,16 +66,6 @@
 					</div><!-- col-sm-4 -->
 					<div class="col-sm-8">
 						<p class="margin-b-50">{{profile.About.Intro}}</p>
-						<div class="row">
-							<div class="col-sm-6 col-md-6 col-lg-3" v-for="item in profile.Work.List">
-								<div class="radial-prog-area margin-b-30">
-									<div class="radial-progress" data-prog-percent=".97">
-										<div></div>
-										<h6 class="progress-title">HTML5 & CSS3</h6>
-									</div>
-								</div><!-- radial-prog-area-->
-							</div><!-- col-sm-6-->
-						</div><!-- row -->
 					</div><!-- col-sm-8 -->
 				</div><!-- row -->
 			</div><!-- container -->
@@ -93,16 +86,14 @@
 							<h5 class="font-yellow"><b>{{profile.Education.Dep}}</b></h5>
 							<h6 class="margin-t-10">{{profile.Education.Year}}</h6>
 							<p class="font-semi-white margin-tb-30">{{profile.Education.Info}}</p>
-							<ul class="list" >
+							<ul class="list">
 								<li v-for="item in profile.Education.Course"><span>{{item}}</span></li>
-							  </ul>
+							</ul>
 						</div><!-- experience -->
 					</div><!-- col-sm-8 -->
 				</div><!-- row -->
 			</div><!-- container -->
-
 		</section><!-- experience-section -->
-
 		<section class="education-section section">
 			<div class="container">
 				<div class="row">
@@ -112,16 +103,15 @@
 							<h6 class="font-lite-black"><b>PREVIOUS JOBS</b></h6>
 						</div>
 					</div><!-- col-sm-4 -->
-					<div class="col-sm-8">
-						<div class="education-wrapper">
-							<div class="education margin-b-50" v-for="(item,index) in profile.Work.List" >
-								<h4><b>{{item.Name}}</b></h4>
-								<h5 class="font-yellow"><b>{{item.Job}}</b></h5>
-								<h6 class="font-lite-black margin-t-10">{{item.Year}}</h6>
-								<p class="margin-t-30">{{item.Info}} </p>	
-							</div><!-- education -->
-						</div><!-- education-wrapper -->
-					</div><!-- col-sm-8 -->
+					<div class="education-wrapper margin-b-50">
+						<div v-for="(item,index) in profile.Work.List"
+							:class="index%2==0? 'education right': 'education left'">
+							<h4><b>{{item.Name}}</b></h4>
+							<h5 class="font-yellow"><b>{{item.Job}}</b></h5>
+							<h6 class="font-lite-black margin-t-10">{{item.Year}}</h6>
+							<p class="margin-t-30">{{item.Info}} </p>
+						</div><!-- education -->
+					</div><!-- education-wrapper -->
 				</div><!-- row -->
 			</div><!-- container -->
 		</section><!-- about-section -->
