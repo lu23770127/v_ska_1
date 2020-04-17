@@ -4,12 +4,10 @@
 -------------------------------------------------------------------------- */
 @media only screen and (max-width: 1200px) {
 	/* ---------------------------------
-	4. ABOUT SECTION
+	9. COUNTER SECTION
 	--------------------------------- */
 
-	/* COUNTER SECTION */
-
-	.about-section{ text-align: center; }
+	.counter-section{ text-align: center; padding: 50px 0 20px; }
 
 	.counter{ display: inline-block; }
 	
@@ -19,6 +17,12 @@
 /* Screens Resolution : 992px
 -------------------------------------------------------------------------- */
 @media only screen and (max-width: 992px) {
+	
+	/* ---------------------------------
+	4. INTRO SECTION
+	--------------------------------- */
+
+	.intro-section{ padding-top: 250px; }
 	
 }
 
@@ -48,43 +52,34 @@
 
 	
 	/* ---------------------------------
-	3. INTRO SECTION
+	4. INTRO SECTION
 	--------------------------------- */
 
-	/* INTRO */
+	.intro-section{ padding-top: 350px; }
 
-	.intro .downlad-btn{ float: none; }
+
+	/* ---------------------------------
+	5. PORFOLIO SECTION
+	--------------------------------- */
+
+	.portfolio-section{ padding-bottom: 0; }
 	
+	.portfolio-section .portfolioFilter{ margin: 0px 0 10px; }
 	
-	
-	
+	.portfolio-section .portfolioContainer{ margin-left: 0; margin-right: 0; }
+
+	.portfolio-section .p-item{ width: 50%; padding: 0 15px 0px; }
+
+	.portfolio-section .p-item{ max-width: 400px; }
+
 	
 	/* ---------------------------------
-	6. PORFOLIO SECTION
+	8. EDUCATION SECTION
 	--------------------------------- */
 	
-	.portfolio-section .portfolioFilter{ margin-top: 0px; margin-bottom: 20px; }
-	
-	.portfolio-section .p-item{ width: 50%; }
-	
-	
-	/* ---------------------------------
-	7. EDUCATION SECTION
-	--------------------------------- */
-
-	.education-wrapper{ position: relative; overflow: hidden; text-align: center; }
-
-	.education-wrapper:after{ content:''; position: absolute; top: 8px; bottom: 0; left: 50%;
-		margin-left: -1px; width: 2px; background: #ccc; }
-
-	.education-wrapper .education{ width: 100%; margin-top: 30px; }
-	
-	.education-wrapper .education.left,
-	.education-wrapper .education.right{ float: none; padding: 0px; text-align: center; }
-
 	.education-wrapper:after,
 	.education-wrapper .education:after{ display: none; }
-	
+
 }
 
 /* Screens Resolution : 575px
@@ -97,10 +92,11 @@
 
 	body{ font-size: 14px;  }
 	
-	/* ---------------------------------
-	6. PORFOLIO SECTION
-	--------------------------------- */
 
+	/* ---------------------------------
+	5. PORFOLIO SECTION
+	--------------------------------- */
+	
 	.portfolio-section .p-item{ width: 100%; }
 	
 }
@@ -116,7 +112,15 @@
 -------------------------------------------------------------------------- */
 @media only screen and (max-width: 359px) {
 	
-	
+	/* ---------------------------------
+	3. HEADER
+	--------------------------------- */
+
+	header .heading-wrapper{  padding: 30px 20px 20px; }
+
+	header .info .icon{ font-size: 25px; }
+
+	header .info .right-area{ margin-left: 35px; }
 
 }
 
@@ -130,6 +134,23 @@
 /* Screens Resolution : 290px
 -------------------------------------------------------------------------- */
 @media only screen and (max-width: 260px) {
+	
+	/* ---------------------------------
+	3. HEADER
+	--------------------------------- */
 
+	header .heading-wrapper{  padding: 10px 15px 0px; }
+
+	header .info .icon{ font-size: 15px; }
+
+	header .info .right-area{ margin-left: 20px; }
+	
+	/* ---------------------------------
+	4. INTRO SECTION
+	--------------------------------- */
+
+	.intro .profile-img{ width: 80%; height: auto; top: 0; margin-bottom: 10px; }
+	
+	.intro{ padding: 20px 10px 0; margin-right: -15px; margin-left: -15px; }
 	
 }

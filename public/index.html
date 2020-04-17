@@ -1,339 +1,333 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-  <title>Tilda Portfolio</title>
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700%7CAllura" rel="stylesheet">
-  <!-- Stylesheets -->
-  <link href="common-css/bootstrap.css" rel="stylesheet">
-  <link href="common-css/ionicons.css" rel="stylesheet">
-  <link href="common-css/fluidbox.min.css" rel="stylesheet">
-  <link href="03-cv-business/css/styles.css" rel="stylesheet">
-  <link href="03-cv-business/css/responsive.css" rel="stylesheet">
+	<title>CV - Boxed</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+
+
+	<!-- Font -->
+
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700%7CAllura" rel="stylesheet">
+
+	<!-- Stylesheets -->
+
+	<link href="common-css/bootstrap.css" rel="stylesheet">
+
+	<link href="common-css/ionicons.css" rel="stylesheet">
+
+	<link href="common-css/fluidbox.min.css" rel="stylesheet">
+
+	<link href="01-cv-portfolio/css/styles.css" rel="stylesheet">
+
+	<link href="01-cv-portfolio/css/responsive.css" rel="stylesheet">
+
 </head>
 
 <body>
-  <div id="app">
+	<div id="app">
+		<section class="intro-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-1 col-lg-2"></div>
+					<div class="col-md-10 col-lg-8">
+						<div class="intro">
+							<div class="profile-img"><img src="https://scontent.ftpe1-1.fna.fbcdn.net/v/t1.0-9/83923505_3035299826482614_5991007983784427520_n.jpg?_nc_cat=104&_nc_sid=85a577&_nc_ohc=ZqIcX6uTkSYAX9tFl8a&_nc_ht=scontent.ftpe1-1.fna&oh=6725091ab49a066846cca9b84c051621&oe=5EBD163E" alt="">
+							</div>
+							<h3><b>{{profile.About.Name}}</b></h3>
+							<ul class="social-icons">
+								<li v-for="item in profile.Icon.List"><a :href="item.Link"><i :class="item.Class"></i></a></li>
+							</ul>
+							<h5 class="font-yellow">
+								<i class="icon ion-ios-location-outline"></i>
+								{{profile.About.City}}
+								<i class="icon ion-ios-chatboxes-outline"></i>
+								{{profile.About.Email}}
+							</h5>
+						</div><!-- intro -->
+					</div><!-- col-sm-8 -->
+				</div><!-- row -->
+			</div><!-- container -->
+		</section><!-- intro-section -->
+		
+		<section class="about-section section">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="heading">
+							<h3><b>About me</b></h3>
+							<h6 class="font-lite-black"><b>PROFESSIONAL PATH</b></h6>
+						</div>
+					</div><!-- col-sm-4 -->
+					<div class="col-sm-8">
+						<p class="margin-b-50">{{profile.About.Intro}}</p>
+						<div class="row">
+							<div class="col-sm-6 col-md-6 col-lg-3" v-for="item in profile.Work.List">
+								<div class="radial-prog-area margin-b-30">
+									<div class="radial-progress" data-prog-percent=".97">
+										<div></div>
+										<h6 class="progress-title">HTML5 & CSS3</h6>
+									</div>
+								</div><!-- radial-prog-area-->
+							</div><!-- col-sm-6-->
+						</div><!-- row -->
+					</div><!-- col-sm-8 -->
+				</div><!-- row -->
+			</div><!-- container -->
+		</section><!-- about-section -->
 
-    <section class="about-section section">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12 center-text">
-            <div class="heading ">
-              <h3><b>{{profile.About.Name}}</b>
-                <ul class="social-icons">
-                  <li><a href="https://www.linkedin.com/in/lu-ting-yi-531a24193/"><i
-                        class="ion-social-linkedin"></i></a></li>
-                  <li><a href="https://www.instagram.com/_tingyi.lu_/"><i class="ion-social-instagram"></i></a></li>
-                  <li><a href="https://www.facebook.com/profile.php?id=100000078781761"><i
-                        class="ion-social-facebook"></i></a></li>
-                  <li><a href="https://twitter.com/TildaLu1"><i class="ion-social-twitter"></i></a></li>
-                </ul>
-              </h3>
-              <h5><b>{{profile.About.City}}．{{profile.About.Birth}}．{{profile.About.Email}}</b></h4>
-                <h6 class="font-lite-black">{{profile.About.Intro}}</h6>
-            </div>
-          </div><!-- row -->
-        </div><!-- container -->
-    </section><!-- about-section -->
+		<section class="experience-section section">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="heading">
+							<h3><b>Education</b></h3>
+							<h6 class="font-lite-black"><b>ACADEMIC CAREER</b></h6>
+						</div>
+					</div><!-- col-sm-4 -->
+					<div class="col-sm-8">
+						<div class="experience margin-b-50">
+							<h4><b>{{profile.Education.School}}</b></h4>
+							<h5 class="font-yellow"><b>{{profile.Education.Dep}}</b></h5>
+							<h6 class="margin-t-10">{{profile.Education.Year}}</h6>
+							<p class="font-semi-white margin-tb-30">{{profile.Education.Info}}</p>
+							<ul class="list" >
+								<li v-for="item in profile.Education.Course"><span>{{item}}</span></li>
+							  </ul>
+						</div><!-- experience -->
+					</div><!-- col-sm-8 -->
+				</div><!-- row -->
+			</div><!-- container -->
 
-    <section class="experience-section section center-text">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="heading">
-              <h3><b>Work Experience</b></h3>
-              <h6 class="font-lite-black"><b>PREVIOUS JOBS</b></h6>
-            </div>
-          </div><!-- col-sm-3 -->
-          <div class="col-sm-12">
-            <div class="education-wrapper margin-b-50">
-              <div v-for="(item,index) in profile.Work.List" :class="index%2!=0? 'education right': 'education left'">
-                <h4><b>{{item.Name}}</b></h4>
-                <h5 class="font-yellow"><b>{{item.Job}}</b></h5>
-                <h6 class="font-lite-black margin-t-10">{{item.Year}}</h6>
-                <p class="margin-t-30">{{item.Info}} </p>
-              </div><!-- education -->
-            </div><!-- education-wrapper -->
-          </div><!-- col-sm-9 -->
-        </div><!-- row -->
-      </div><!-- container -->
-    </section><!-- experience-section -->
+		</section><!-- experience-section -->
 
+		<section class="education-section section">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="heading">
+							<h3><b>Experience</b></h3>
+							<h6 class="font-lite-black"><b>PREVIOUS JOBS</b></h6>
+						</div>
+					</div><!-- col-sm-4 -->
+					<div class="col-sm-8">
+						<div class="education-wrapper">
+							<div class="education margin-b-50" v-for="(item,index) in profile.Work.List" >
+								<h4><b>{{item.Name}}</b></h4>
+								<h5 class="font-yellow"><b>{{item.Job}}</b></h5>
+								<h6 class="font-lite-black margin-t-10">{{item.Year}}</h6>
+								<p class="margin-t-30">{{item.Info}} </p>	
+							</div><!-- education -->
+						</div><!-- education-wrapper -->
+					</div><!-- col-sm-8 -->
+				</div><!-- row -->
+			</div><!-- container -->
+		</section><!-- about-section -->
 
-    <section class="education-section section">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12 center-text">
-            <div class="heading">
-              <h3><b>Education</b></h3>
-              <h6 class="font-lite-black"><b>ACADEMIC CAREER</b></h6>
-            </div>
-          </div><!-- col-sm-3 -->
-          <div class="col-sm-12">
-            <div class="experience margin-b-50">
-              <h4><b>{{profile.Education.School}}</b></h4>
-              <h5 class="font-yellow"><b>{{profile.Education.Dep}}</b></h5>
-              <h6 class="font-lite-black margin-t-10">{{profile.Education.Year}}</h6>
-              <p class="margin-tb-30">Duis non volutpat arcu, eu mollis tellus. S</p>
-            </div><!-- experience -->
-          </div><!-- col-sm-9 -->
-        </div><!-- row -->
-      </div><!-- container -->
-    </section><!-- education-section -->
+		<section class="portfolio-section section">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="heading">
+							<h3><b>Portfolio</b></h3>
+							<h6 class="font-lite-black"><b>MY WORK</b></h6>
+						</div>
+					</div><!-- col-sm-4 -->
+					<div class="col-sm-8">
+						<div class="portfolioFilter clearfix margin-b-80">
+							<a href="#" data-filter="*" class="current"><b>ALL</b></a>
+							<a href="#" data-filter=".web-design"><b>WEB DESIGN</b></a>
+							<a href="#" data-filter=".branding"><b>BRANDING</b></a>
+							<a href="#" data-filter=".graphic-design"><b>GRAPHIC DESIGN</b></a>
+						</div><!-- portfolioFilter -->
+					</div><!-- col-sm-8 -->
+				</div><!-- row -->
+			</div><!-- container -->
 
-    <section class="skills-section section">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12 center-text">
-            <div class="heading">
-              <h3><b>{{Name}}</b></h3>
-              <h6 class="font-lite-black"><b>{{intro}}</b></h6>
-            </div>
-          </div><!-- col-sm-12 -->
+			<div class="portfolioContainer">
 
-          <div class="col-sm-12 col-md-6">
-            <h4><b></b></h4>
-            <h6 class="expert">EXPERT</h6>
+				<div class="p-item web-design">
+					<a href="images/portfolio-1-600x400.jpg" data-fluidbox>
+						<img src="images/portfolio-1-600x400.jpg" alt=""></a>
+				</div><!-- p-item -->
 
-            <p class="margin-tb-30">Duis non volutpat arcu, eu mollis tellus. Sed finibus aliquam neque sit amet
-              sodales.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla maximus pellentes que velit,
-              quis consequat nulla effi citur at.</p>
+				<div class="p-item branding graphic-design">
+					<a href="images/portfolio-7-600x800.jpg" data-fluidbox>
+						<img src="images/portfolio-7-600x800.jpg" alt=""></a>
+				</div><!-- p-item -->
 
-            <div class="line-progress margin-b-20" data-prog-percent=".90">
-              <div></div>
-              <p class="progress-title"><b>HTML</b></p>
-            </div>
+				<div class="p-item web-design">
+					<a href="images/portfolio-2-600x400.jpg" data-fluidbox>
+						<img src="images/portfolio-2-600x400.jpg" alt=""></a>
+				</div><!-- p-item -->
 
-            <div class="line-progress margin-b-50" data-prog-percent=".85">
-              <div></div>
-              <p class="progress-title"><b>CSS</b></p>
-            </div>
+				<div class="p-item p-item-2 graphic-design">
+					<a class="img" href="images/portfolio-8-300x400.jpg" data-fluidbox>
+						<img src="images/portfolio-8-300x400.jpg" alt=""></a>
+					<a class="img" href="images/portfolio-9-300x400.jpg" data-fluidbox>
+						<img src="images/portfolio-9-300x400.jpg" alt=""></a>
+				</div><!-- p-item -->
 
-          </div><!-- col-md-6 -->
+				<div class="p-item branding graphic-design">
+					<a href="images/portfolio-3-600x400.jpg" data-fluidbox>
+						<img src="images/portfolio-3-600x400.jpg" alt=""></a>
+				</div><!-- p-item -->
 
-          <div class="col-sm-12 col-md-6">
-            <h4><b>GRAPHIC DESIGN</b></h4>
-            <h6 class="expert">EXPERT</h6>
+				<div class="p-item graphic-design web-design">
+					<a href="images/portfolio-4-600x400.jpg" data-fluidbox>
+						<img src="images/portfolio-4-600x400.jpg" alt=""></a>
+				</div><!-- p-item -->
 
-            <p class="margin-tb-30">Duis non volutpat arcu, eu mollis tellus. Sed finibus aliquam neque sit amet
-              sodales.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla maximus pellentes que velit,
-              quis consequat nulla effi citur at.</p>
+				<div class="p-item  graphic-design branding">
+					<a href="images/portfolio-5-600x800.jpg" data-fluidbox>
+						<img src="images/portfolio-5-600x800.jpg" alt=""></a>
+				</div><!-- p-item -->
 
-            <div class="line-progress margin-b-20" data-prog-percent=".97">
-              <div></div>
-              <p class="progress-title"><b>PHOTOSHOP</b></p>
-            </div>
+				<div class="p-item web-design branding">
+					<a href="images/portfolio-6-600x800.jpg" data-fluidbox>
+						<img src="images/portfolio-6-600x800.jpg" alt=""></a>
+				</div><!-- p-item -->
 
-            <div class="line-progress margin-b-50" data-prog-percent=".97">
-              <div></div>
-              <p class="progress-title"><b>ILLUSTRATOR</b></p>
-            </div>
+				<div class="p-item p-item-2 graphic-design">
+					<a class="img" href="images/portfolio-10-300x400.jpg" data-fluidbox>
+						<img src="images/portfolio-10-300x400.jpg" alt=""></a>
+					<a class="img" href="images/portfolio-11-300x400.jpg" data-fluidbox>
+						<img src="images/portfolio-11-300x400.jpg" alt=""></a>
+				</div><!-- p-item -->
 
-          </div><!-- col-md-6 -->
-        </div><!-- row -->
-      </div><!-- container -->
-    </section><!-- skills-section -->
+			</div><!-- portfolioContainer -->
 
+		</section><!-- portfolio-section -->
 
-    <section class="radial-progress-section section">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-6 col-md-6 col-lg-3">
-            <div class="radial-prog-area margin-b-30">
-              <div class="radial-progress" data-prog-percent=".97">
-                <div></div>
-                <h6 class="progress-title">HTML5 & CSS3</h6>
-              </div>
-            </div><!-- radial-prog-area-->
-          </div><!-- col-sm-6-->
+		<section class="counter-section" id="counter">
+			<div class="container">
+				<div class="row">
 
-          <div class="col-sm-6 col-md-6 col-lg-3">
-            <div class="radial-prog-area margin-b-30">
-              <div class="radial-progress" data-prog-percent=".78">
-                <div></div>
-                <h6 class="progress-title">WEB DESIGN</h6>
-              </div>
-            </div><!-- radial-prog-area-->
-          </div><!-- col-sm-6-->
+					<div class="col-sm-6 col-md-6 col-lg-3">
+						<div class="counter margin-b-30">
+							<h1 class="title"><b><span class="counter-value" data-duration="400"
+										data-count="3">0</span></b></h1>
+							<h5 class="desc"><b>Coder Degrees</b></h5>
+						</div><!-- counter -->
+					</div><!-- col-md-3-->
 
-          <div class="col-sm-6 col-md-6 col-lg-3">
-            <div class="radial-prog-area margin-b-30">
-              <div class="radial-progress" data-prog-percent=".67">
-                <div></div>
-                <h6 class="progress-title">JAVA</h6>
-              </div>
-            </div><!-- radial-prog-area-->
-          </div><!-- col-sm-6-->
+					<div class="col-sm-6 col-md-6 col-lg-3">
+						<div class="counter margin-b-30">
+							<h1 class="title"><b><span class="counter-value" data-duration="1400"
+										data-count="25">0</span></b></h1>
+							<h5 class="desc"><b>Project Completed</b></h5>
+						</div><!-- counter -->
+					</div><!-- col-md-3-->
 
-          <div class="col-sm-6 col-md-6 col-lg-3">
-            <div class="radial-prog-area margin-b-50">
-              <div class="radial-progress" data-prog-percent=".97">
-                <div></div>
-                <h6 class="progress-title">PHP</h6>
-              </div>
-            </div><!-- radial-prog-area-->
-          </div><!-- col-sm-6-->
+					<div class="col-sm-6 col-md-6 col-lg-3">
+						<div class="counter margin-b-30">
+							<h1 class="title"><b><span class="counter-value" data-duration="700"
+										data-count="311">0</span></b></h1>
+							<h5 class="desc"><b>Satisfied Clients</b></h5>
+						</div><!-- counter -->
+					</div><!-- col-md-3-->
 
-        </div><!-- row -->
-      </div><!-- container -->
-    </section><!-- radial-progress-section -->
+					<div class="col-sm-6 col-md-6 col-lg-3">
+						<div class="counter margin-b-30">
+							<h1 class="title"><b><span class="counter-value" data-duration="2000"
+										data-count="732">0</span></b></h1>
+							<h5 class="desc"><b>Finished Projects</b></h5>
+						</div><!-- margin-b-30 -->
+					</div><!-- col-md-3-->
 
+				</div><!-- row-->
+			</div><!-- container-->
+		</section><!-- counter-section-->
+	</div>
 
-
-
-
-
-
-    <section class="quoto-section center-text">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <i class="icon ion-quote"></i>
-            <h3 class="font-yellow"><b>There is no secret to seccess</b></h3>
-            <h3><b>It is the result of preparation, <span class="font-yellow">Hard work</span>,
-                and learnign from the failure.</b></h3>
-          </div><!-- col-sm-12 -->
-        </div><!-- row -->
-      </div><!-- container -->
-    </section><!-- quoto-section -->
-
-
-    <section class="portfolio-section section center-text">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="heading">
-              <h3><b>Portfolio</b></h3>
-              <h6 class="font-lite-black"><b>MY WORK</b></h6>
-            </div>
-          </div><!-- col-sm-12 -->
-
-          <div class="col-sm-12">
-            <div class="portfolioFilter clearfix margin-b-80">
-              <a href="#" data-filter="*" class="current"><b>ALL</b></a>
-              <a href="#" data-filter=".web-design"><b>WEB DESIGN</b></a>
-              <a href="#" data-filter=".branding"><b>BRANDING</b></a>
-              <a href="#" data-filter=".graphic-design"><b>GRAPHIC DESIGN</b></a>
-            </div><!-- portfolioFilter -->
-          </div><!-- col-sm-8 -->
-        </div><!-- row -->
-
-        <div class="portfolioContainer margin-b-50">
-
-          <div class="p-item web-design">
-            <a href="images/portfolio-13-400x400.jpg" data-fluidbox>
-              <img src="images/portfolio-13-400x400.jpg" alt=""></a>
-          </div><!-- p-item -->
-
-          <div class="p-item branding graphic-design">
-            <a href="images/portfolio-14-400x400.jpg" data-fluidbox>
-              <img src="images/portfolio-14-400x400.jpg" alt=""></a>
-          </div><!-- p-item -->
-
-          <div class="p-item web-design">
-            <a href="images/portfolio-15-400x400.jpg" data-fluidbox>
-              <img src="images/portfolio-15-400x400.jpg" alt=""></a>
-          </div><!-- p-item -->
-
-          <div class="p-item graphic-design">
-            <a class="img" href="images/portfolio-16-400x400.jpg" data-fluidbox>
-              <img src="images/portfolio-16-400x400.jpg" alt=""></a>
-          </div><!-- p-item -->
-
-          <div class="p-item branding graphic-design">
-            <a href="images/portfolio-17-400x400.jpg" data-fluidbox>
-              <img src="images/portfolio-17-400x400.jpg" alt=""></a>
-          </div><!-- p-item -->
-
-          <div class="p-item graphic-design web-design">
-            <a href="images/portfolio-18-400x400.jpg" data-fluidbox>
-              <img src="images/portfolio-18-400x400.jpg" alt=""></a>
-          </div><!-- p-item -->
-
-          <div class="p-item  graphic-design branding">
-            <a href="images/portfolio-19-400x400.jpg" data-fluidbox>
-              <img src="images/portfolio-19-400x400.jpg" alt=""></a>
-          </div><!-- p-item -->
-
-          <div class="p-item web-design branding">
-            <a href="images/portfolio-20-400x400.jpg" data-fluidbox>
-              <img src="images/portfolio-20-400x400.jpg" alt=""></a>
-          </div><!-- p-item -->
-
-        </div><!-- portfolioContainer -->
-      </div><!-- container -->
-    </section><!-- portfolio-section -->
-
-    <footer>
-      <p class="copyright">
-        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-        Copyright &copy;
-        <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i
-          class="ion-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-      </p>
-    </footer>
+	<footer>
+		<p class="copyright">
+			<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+			Copyright &copy;
+			<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with
+			<i class="ion-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+			<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+		</p>
 
 
-    <!-- SCIPTS -->
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</footer>
 
-    <script src="common-js/jquery-3.2.1.min.js"></script>
 
-    <script src="common-js/tether.min.js"></script>
+	<!-- SCIPTS -->
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-    <script src="common-js/bootstrap.js"></script>
+	<script src="common-js/jquery-3.2.1.min.js"></script>
 
-    <script src="common-js/isotope.pkgd.min.js"></script>
+	<script src="common-js/tether.min.js"></script>
 
-    <script src="common-js/jquery.waypoints.min.js"></script>
+	<script src="common-js/bootstrap.js"></script>
 
-    <script src="common-js/progressbar.min.js"></script>
+	<script src="common-js/isotope.pkgd.min.js"></script>
 
-    <script src="common-js/jquery.fluidbox.min.js"></script>
+	<script src="common-js/jquery.waypoints.min.js"></script>
 
-    <script src="common-js/scripts.js"></script>
+	<script src="common-js/progressbar.min.js"></script>
 
-  </div>
-  <!-- built files will be auto injected -->
+	<script src="common-js/jquery.fluidbox.min.js"></script>
+
+	<script src="common-js/scripts.js"></script>
+
 </body>
 
 </html>
+
 <script>
+	var course_list = ["程式設計概念與方法 Programming Concept and Methods", "資訊管理導論 Introduction to Information Management", "資料結構 Data Structures", "物件導向程式語言 Object-Oriented Programming Languages", "系統分析與設計 Systems Analysis and Design", "資料庫管理系統 Database Management Systems", "物件導向軟體工程 Object-Oriented Software Engineering", "管理資訊系統 Management Information Systems"]
+	var profile_data = {
+		About: {
+			Name: "Tilda Lu",
+			City: "Taichung",
+			Birth: "1997-12-26",
+			Email: "lu23770127@gmail.com",
+			Intro: "Hello!我是亭儀，就讀國立雲林科技大學，資訊管理系大四!雖然是讀資訊管理，但是對設計及繪畫也有十足興趣，也有跨學程修習設計學院相關課程，同時自學UI/UX相關設計。大二時曾擔任系學會副會長及美宣，對於活動籌劃及管理有相關基礎經驗。"
+		},
+		Icon: {
+			List: [
+				{
+					Link: "https://www.facebook.com/profile.php?id=100000078781761",
+					Class: "ion-social-facebook"
+				},
+				{
+					Link: "https://www.instagram.com/_tingyi.lu_/",
+					Class: "ion-social-instagram"
+				},
 
-  var profile_data = {
-    About: {
-      Name: "Tilda Lu",
-      City: "Taichung",
-      Birth: "1997-12-26",
-      Email: "lu23770127@gmail.com",
-      Intro: "Hello!我是亭儀，就讀國立雲林科技大學，資訊管理系大四!雖然是讀資訊管理，但是對設計及繪畫也有十足興趣，也有跨學程修習設計學院相關課程，同時自學UI/UX相關設計。大二時曾擔任系學會副會長及美宣，對於活動籌劃及管理有相關基礎經驗。"
-    },
-    Work: {
-      List: [
-        { Name: "Titansoft", Job: "Product Development Intern", Year: "Feb 2020 - Aug 2020", Info: "its great" },
-        { Name: "雲科大資訊管理系辦公室", Job: "系辦公室工讀生", Year: "Dec 2017 - Jan 2020", Info: "審查資料之整理與編排以及相關聯絡事項。辦理各項工作會議、說明會、成果研討會等視覺設計與編修、資料蒐集與整理。網站架設維護。協助處理招生相關文書、行政工作。維持辦公室清潔。6.接聽相關諮詢電話。" },
-        { Name: "Women Entrepreneurship Week", Job: "工作人員", Year: "Oct 2019 - Oct 2019", Info: "擔任籌備團隊美宣組組員。活動中擔任引導人員。入場身份檢驗。服務台協助引導。人流引導及控制。現場秩序管理與掌控" },
-        { Name: "ZA SHARE Youth 雜學青", Job: "讓狂人飛 展覽 解說工作人員", Year: "May 2019 - May 2019", Info: "人流引導及控制。現場秩序管理與掌控。解說展場內容以及理念。提供展場影音體驗。配置展場紀念品" }
-      ]
-    },
-    Education: { School: "National Yunlin University of Science and Technology", Dep: "Information Management", Year: "Sep 2016 - Jun 2020" },
-    Skill: {}
-  }
-  var app = new Vue({
-    el: "#app",
-    data: {
-      profile: profile_data
-    },
-    methods: {
+				{
+					Link: "https://www.linkedin.com/in/lu-ting-yi-531a24193/",
+					Class: "ion-social-linkedin"
+				},
 
-    },
-  })
+				{
+					Link: "https://twitter.com/TildaLu1",
+					Class: "ion-social-twitter"
+				}
+			]
+		},
+		Work: {
+			List: [
+				{ Name: "Titansoft", Job: "Product Development Intern", Year: "Feb 2020 - Aug 2020", Info: "its great" },
+				{ Name: "雲科大資訊管理系辦公室", Job: "系辦公室工讀生", Year: "Dec 2017 - Jan 2020", Info: "審查資料之整理與編排以及相關聯絡事項。辦理各項工作會議、說明會、成果研討會等視覺設計與編修、資料蒐集與整理。網站架設維護。協助處理招生相關文書、行政工作。維持辦公室清潔。6.接聽相關諮詢電話。" },
+				{ Name: "Women Entrepreneurship Week", Job: "工作人員", Year: "Oct 2019 - Oct 2019", Info: "擔任籌備團隊美宣組組員。活動中擔任引導人員。入場身份檢驗。服務台協助引導。人流引導及控制。現場秩序管理與掌控" },
+				{ Name: "ZA SHARE Youth 雜學青", Job: "讓狂人飛 展覽 解說工作人員", Year: "May 2019 - May 2019", Info: "人流引導及控制。現場秩序管理與掌控。解說展場內容以及理念。提供展場影音體驗。配置展場紀念品" }
+			]
+		},
+		Education: { School: "National Yunlin University of Science and Technology", Dep: "Information Management", Year: "Sep 2016 - Jun 2020", Info: "學習資訊管理相關知識", Course: course_list },
+		Skill: {}
+	}
+	var app = new Vue({
+		el: "#app",
+		data: {
+			profile: profile_data
+		},
+		methods: {
+
+		},
+	})
 </script>
