@@ -83,22 +83,17 @@
 					</div><!-- col-sm-12 -->
 
 					<div class="col-sm-12 col-md-6">
-						<h4><b>HTML & CSS</b></h4>
+						<h4><b>Programming</b></h4>
 						<h6 class="expert font-yellow">EXPERT</h6>
 
-						<p class="margin-tb-30">Duis non volutpat arcu, eu mollis tellus. Sed finibus aliquam neque sit
+						<p class="font-semi-white margin-tb-30">Duis non volutpat arcu, eu mollis tellus. Sed finibus aliquam neque sit
 							amet sodales.
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla maximus pellentes que velit,
 							quis consequat nulla effi citur at.</p>
 
 						<div class="line-progress margin-b-20" data-prog-percent=".90">
 							<div></div>
-							<p class="progress-title"><b>HTML</b></p>
-						</div>
-
-						<div class="line-progress margin-b-50" data-prog-percent=".85">
-							<div></div>
-							<p class="progress-title"><b>CSS</b></p>
+							<p class="progress-title font-semi-white"><b>HTML</b></p>
 						</div>
 
 					</div><!-- col-md-6 -->
@@ -107,21 +102,15 @@
 						<h4><b>GRAPHIC DESIGN</b></h4>
 						<h6 class="expert font-yellow">EXPERT</h6>
 
-						<p class="margin-tb-30">Duis non volutpat arcu, eu mollis tellus. Sed finibus aliquam neque sit
+						<p class="font-semi-white margin-tb-30">Duis non volutpat arcu, eu mollis tellus. Sed finibus aliquam neque sit
 							amet sodales.
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla maximus pellentes que velit,
 							quis consequat nulla effi citur at.</p>
 
 						<div class="line-progress margin-b-20" data-prog-percent=".97">
 							<div></div>
-							<p class="progress-title"><b>PHOTOSHOP</b></p>
+							<p class="progress-title font-semi-white"><b>PHOTOSHOP</b></p>
 						</div>
-
-						<div class="line-progress margin-b-50" data-prog-percent=".97">
-							<div></div>
-							<p class="progress-title"><b>ILLUSTRATOR</b></p>
-						</div>
-
 					</div><!-- col-md-6 -->
 				</div><!-- row -->
 			</div><!-- container -->
@@ -365,7 +354,47 @@
 			]
 		},
 		Education: { School: "National Yunlin University of Science and Technology", Dep: "Information Management", Year: "Sep 2016 - Jun 2020", Info: "學習資訊管理相關知識", Course: course_list },
-		Skill: {}
+		Skill: {
+			Programming:[
+				{Name:"JavaScript",Score:0.65},
+				{Name:"C#",Score:0.7},
+				{Name:"PHP",Score:0.8},
+				{Name:"HTML",Score:0.9},
+				{Name:"R",Score:0.5},
+				{Name:"CSS",Score:0.6},
+				{Name:"jQuery",Score:0.65}
+			],
+			Graphic:[
+				{Name:"Adobe Flash",Score:0.5},
+				{Name:"Adobe Photoshop",Score:0.95},
+				{Name:"Adobe Illustrator",Score:0.9},
+				{Name:"Adobe XD",Score:0.9}
+			],
+			Tools:[
+				{Name:"Visual Studio",Score:0.6},
+				{Name:"Android Studio",Score:0.6},
+				{Name:"DreamWeaver",Score:0.5},
+				{Name:"Visual Studio Code",Score:0.5},
+				{Name:"CodePen.io",Score:0.5},
+				{Name:"CSS",Score:0.5},
+				{Name:"jQuery",Score:0.5}
+			],
+			Database:[
+				{Name:"MySQL",Score:0.5},
+				{Name:"SQLite",Score:0.5}
+			],
+			Technical:[
+				{Name:"ASP.NET MVC",Score:0.5},
+				{Name:"ASP.NET Core",Score:0.5},
+				{Name:"Entity Framework",Score:0.5},
+				{Name:"Vue.js",Score:0.5}
+			],
+			Git:[
+				{Name:"Source Tree",Score:0.5},
+				{Name:"GitHub",Score:0.5},
+				{Name:"GitLab",Score:0.5}
+			]
+		}
 	}
 	var app = new Vue({
 		el: "#app",
