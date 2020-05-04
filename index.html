@@ -1,0 +1,314 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+	<Title>Tilda's Portfolio</Title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+
+
+	<!-- Font -->
+
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700%7CAllura" rel="stylesheet">
+
+	<!-- Stylesheets -->
+
+	<link href="common-css/bootstrap.css" rel="stylesheet">
+
+	<link href="common-css/ionicons.css" rel="stylesheet">
+
+	<link href="common-css/fluidbox.min.css" rel="stylesheet">
+
+	<link href="01-cv-portfolio/css/styles.css" rel="stylesheet">
+
+	<link href="01-cv-portfolio/css/responsive.css" rel="stylesheet">
+
+</head>
+
+<body>
+	<div id="app">
+		<section class="intro-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-1 col-lg-2"></div>
+					<div class="col-md-10 col-lg-8">
+						<div class="intro">
+							<div class="profile-img"><img
+									src="https://scontent.ftpe1-1.fna.fbcdn.net/v/t1.0-9/83923505_3035299826482614_5991007983784427520_n.jpg?_nc_cat=104&_nc_sid=85a577&_nc_ohc=ZqIcX6uTkSYAX9tFl8a&_nc_ht=scontent.ftpe1-1.fna&oh=6725091ab49a066846cca9b84c051621&oe=5EBD163E"
+									alt="">
+							</div>
+							<h3>{{profile.About.Name}}</h3>
+							<ul class="social-icons">
+								<li v-for="item in profile.Icon.List"><a :href="item.Link"><i
+											:class="item.Class"></i></a></li>
+							</ul>
+							<h5 class="font-yellow">
+								<i class="icon ion-ios-location-outline"></i>
+								{{profile.About.City}}
+								<i class="icon ion-ios-chatboxes-outline"></i>
+								{{profile.About.Email}}
+							</h5>
+						</div><!-- intro -->
+					</div><!-- col-sm-8 -->
+				</div><!-- row -->
+			</div><!-- container -->
+		</section><!-- intro-section -->
+
+		<section class="about-section section">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="heading">
+							<h3><b>About me</b></h3>
+							<h6 class="font-lite-black"><b>PROFESSIONAL PATH</b></h6>
+						</div>
+					</div><!-- col-sm-4 -->
+					<div class="col-sm-8">
+						<p class="margin-b-50"><b>{{profile.About.Intro}}</b></p>
+					</div><!-- col-sm-8 -->
+				</div><!-- row -->
+			</div><!-- container -->
+		</section><!-- about-section -->
+
+		<section class="experience-section section">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12 center-text">
+						<div class="heading">
+							<h3><b>Technical Skills</b></h3>
+							<h6 class="font-lite-black"><b>I'M GOOD AT</b></h6>
+						</div>
+					</div><!-- col-sm-12 -->
+					<div class="col-sm-12 col-md-6" v-for="item in profile.Skill">
+						<h4><b>{{item.Title}}＿</b></h4>
+						<div v-for="list in item.List">
+							<p class="progress-title font-yellow"><b>{{list.Name}} － {{list.Score*100}}%</b></p>
+						</div>
+					</div><!-- col-md-6 -->
+				</div><!-- row -->
+			</div><!-- container -->
+		</section><!-- skills-section -->
+
+		<section class="education-section section">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="heading">
+							<h3><b>Experience</b></h3>
+							<h6 class="font-lite-black"><b>My Experience</b></h6>
+						</div>
+					</div><!-- col-sm-4 -->
+					<div class="education-wrapper margin-b-50">
+						<div v-for="(item,index) in profile.Work.List"
+							:class="index%2==0? 'education right': 'education left'">
+							<h4><b>{{item.Name}}</b></h4>
+							<h5 class="font-yellow"><b>{{item.Job}}</b></h5>
+							<h6 class="font-lite-black margin-t-10">{{item.Year}}</h6>
+							<p class="margin-t-30">{{item.Info}} </p>
+						</div><!-- education -->
+					</div><!-- education-wrapper -->
+				</div><!-- row -->
+			</div><!-- container -->
+		</section><!-- about-section -->
+
+		<section class="experience-section section">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="heading">
+							<h3><b>Education</b></h3>
+							<h6 class="font-lite-black"><b>ACADEMIC CAREER</b></h6>
+						</div>
+					</div><!-- col-sm-4 -->
+					<div class="col-sm-8">
+						<div class="experience margin-b-50">
+							<h4><b>{{profile.Education.School}}</b></h4>
+							<h5 class="font-yellow"><b>{{profile.Education.Dep}}</b></h5>
+							<h6 class="margin-t-10">{{profile.Education.Year}}</h6>
+							<p class="font-semi-white margin-tb-30">{{profile.Education.Info}}</p>
+							<ul class="list">
+								<li v-for="item in profile.Education.Course"><span>{{item}}</span></li>
+							</ul>
+						</div><!-- experience -->
+					</div><!-- col-sm-8 -->
+				</div><!-- row -->
+			</div><!-- container -->
+		</section><!-- experience-section -->
+</div>
+
+	<footer>
+		<p class="copyright">
+			<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+			Copyright &copy;
+			<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with
+			<i class="ion-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+			<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+		</p>
+
+
+	</footer>
+
+
+	<!-- SCIPTS -->
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+	<script src="common-js/jquery-3.2.1.min.js"></script>
+
+	<script src="common-js/tether.min.js"></script>
+
+	<script src="common-js/bootstrap.js"></script>
+
+	<script src="common-js/isotope.pkgd.min.js"></script>
+
+	<script src="common-js/jquery.waypoints.min.js"></script>
+
+	<script src="common-js/progressbar.min.js"></script>
+
+	<script src="common-js/jquery.fluidbox.min.js"></script>
+
+	<script src="common-js/scripts.js"></script>
+
+</body>
+
+</html>
+
+<script>
+	var portfolio_list={
+		Poster:{
+			Title:"Poster",
+			List:[
+				{Name:"pic1",url:"",img:""},
+				{Name:"pic1",url:"",img:""},
+				{Name:"pic1",url:"",img:""},
+				{Name:"pic1",url:"",img:""},
+			]
+		},Leaflet:{
+			Title:"Leaflet",
+			List:[
+				{Name:"pic1",url:"",img:""},
+				{Name:"pic1",url:"",img:""},
+			]
+		},Poster:{
+			Title:"Poster",
+			List:[
+				{Name:"pic1",url:"",img:""},
+				{Name:"pic1",url:"",img:""},
+				{Name:"pic1",url:"",img:""},
+			]
+		}
+	}
+	var course_list = ["程式設計概念與方法 Programming Concept and Methods", "資訊管理導論 Introduction to Information Management", "資料結構 Data Structures", "物件導向程式語言 Object-Oriented Programming Languages", "系統分析與設計 Systems Analysis and Design", "資料庫管理系統 Database Management Systems", "物件導向軟體工程 Object-Oriented Software Engineering", "管理資訊系統 Management Information Systems"]
+	var skill_list = {
+		Programming: {
+			Title: "Programming",
+			List: [
+				{ Name: "JavaScript", Score: 0.65 },
+				{ Name: "C#", Score: 0.7 },
+				{ Name: "PHP", Score: 0.8 },
+				{ Name: "HTML", Score: 0.9 },
+				{ Name: "R", Score: 0.5 },
+				{ Name: "CSS", Score: 0.6 },
+				{ Name: "jQuery", Score: 0.65 }
+			],
+		},
+		Tools: {
+			Title: "Tools",
+			List: [
+				{ Name: "Visual Studio", Score: 0.6 },
+				{ Name: "Android Studio", Score: 0.6 },
+				{ Name: "DreamWeaver", Score: 0.5 },
+				{ Name: "Visual Studio Code", Score: 0.5 },
+				{ Name: "CodePen.io", Score: 0.5 },
+				{ Name: "CSS", Score: 0.5 },
+				{ Name: "jQuery", Score: 0.5 }
+			],
+		},
+		Technical: {
+			Title: "Technical",
+			List: [
+				{ Name: "ASP.NET MVC", Score: 0.5 },
+				{ Name: "ASP.NET Core", Score: 0.5 },
+				{ Name: "Entity Framework", Score: 0.5 },
+				{ Name: "Vue.js", Score: 0.5 }
+			],
+		},
+		Graphic: {
+			Title: "Graphic",
+			List: [
+				{ Name: "Adobe Flash", Score: 0.5 },
+				{ Name: "Adobe Photoshop", Score: 0.95 },
+				{ Name: "Adobe Illustrator", Score: 0.9 },
+				{ Name: "Adobe XD", Score: 0.9 }
+			],
+		},
+		Database: {
+			Title: "Database",
+			List: [
+				{ Name: "MySQL", Score: 0.5 },
+				{ Name: "SQLite", Score: 0.5 }
+			],
+		},
+		Git: {
+			Title: "Git",
+			List: [
+				{ Name: "Source Tree", Score: 0.5 },
+				{ Name: "GitHub", Score: 0.5 },
+				{ Name: "GitLab", Score: 0.5 }
+			]
+		}
+	}
+	var profile_data = {
+		About: {
+			Name: "Tilda Lu",
+			City: "Taichung",
+			Birth: "1997-12-26",
+			Email: "lu23770127@gmail.com",
+			Intro: "Hello!我是亭儀，就讀國立雲林科技大學，資訊管理系大四!雖然是讀資訊管理，但是對設計及繪畫也有十足興趣，也有跨學程修習設計學院相關課程，同時自學UI/UX相關設計。大二時曾擔任系學會副會長及美宣，對於活動籌劃及管理有相關基礎經驗。"
+		},
+		Icon: {
+			List: [
+				{
+					Link: "https://www.facebook.com/profile.php?id=100000078781761",
+					Class: "ion-social-facebook"
+				},
+				{
+					Link: "https://www.instagram.com/_tingyi.lu_/",
+					Class: "ion-social-instagram"
+				},
+
+				{
+					Link: "https://www.linkedin.com/in/lu-ting-yi-531a24193/",
+					Class: "ion-social-linkedin"
+				},
+
+				{
+					Link: "https://twitter.com/TildaLu1",
+					Class: "ion-social-twitter"
+				}
+			]
+		},
+		Work: {
+			List: [
+				{ Name: "Titansoft", Job: "Product Development Intern", Year: "Feb 2020 - Aug 2020", Info: "we learn how to fix problem" },
+				{ Name: "雲科大資訊管理系辦公室", Job: "系辦公室工讀生", Year: "Dec 2017 - Jan 2020", Info: "審查資料之整理與編排以及相關聯絡事項。辦理各項工作會議、說明會、成果研討會等視覺設計與編修、資料蒐集與整理。網站架設維護。協助處理招生相關文書、行政工作。維持辦公室清潔。接聽相關諮詢電話。" },
+				{ Name: "Women Entrepreneurship Week", Job: "工作人員", Year: "Oct 2019 - Oct 2019", Info: "擔任籌備團隊美宣組組員。活動中擔任引導人員。入場身份檢驗。服務台協助引導。人流引導及控制。現場秩序管理與掌控。" },
+				{ Name: "ZA SHARE Youth 雜學青", Job: "讓狂人飛 展覽 解說工作人員", Year: "May 2019 - May 2019", Info: "人流引導及控制。現場秩序管理與掌控。解說展場內容以及理念。提供展場影音體驗。配置展場紀念品。" },
+				{ Name: "社團 － 砥石工作坊", Job: "美宣講座擔任講師", Year: "Dec 2018 - Apr 2019", Info: "本活動針對系學會設計一系列課程，提升系學會在任期中可能遇到之狀況的應變能力，以「團結」、「交流」、「成長」、「傳承」為核心理念，培養正確的價值觀與態度，增加系學會之間的交流與認識。同時秉持著永續經營的理念，透過此活動協助系學會永續發展與傳承。" },
+				{ Name: "社團 － 資訊管理系學會", Job: "28th 副會長／美宣長", Year: "Aug 2017 - Jul 2018", Info: "本系會以服務為目的，落實全系學生及系學會的自治功能及權利與義務，加強學生與學生之間的互動關系，並做好全系學生與師長及全系學生與學校的溝通協調，使本系上下更團結、更有活力為本系會成立宗旨。" }
+			]
+		},
+		Education: { School: "National Yunlin University of Science and Technology", Dep: "Information Management", Year: "Sep 2016 - Jun 2020", Info: "學習資訊管理相關知識", Course: course_list },
+		Skill: skill_list,
+		Portfolio: portfolio_list
+	}
+	var app = new Vue({
+		el: "#app",
+		data: {
+			profile: profile_data
+		},
+		methods: {
+
+		},
+	})
+</script>
