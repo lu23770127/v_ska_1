@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Tilda's Portfolio</title>
+	<Title>Tilda's Portfolio</Title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
@@ -82,7 +82,7 @@
 					</div><!-- col-sm-12 -->
 					<div class="col-sm-12 col-md-6" v-for="item in profile.Skill">
 						<h4><b>{{item.Title}}＿</b></h4>
-						<div class="line-progress margin-b-20" data-prog-percent=".90" v-for="list in item.List">
+						<div v-for="list in item.List">
 							<p class="progress-title font-yellow"><b>{{list.Name}} － {{list.Score*100}}%</b></p>
 						</div>
 					</div><!-- col-md-6 -->
@@ -135,7 +135,7 @@
 				</div><!-- row -->
 			</div><!-- container -->
 		</section><!-- experience-section -->
-	</div>
+</div>
 
 	<footer>
 		<p class="copyright">
@@ -174,6 +174,30 @@
 </html>
 
 <script>
+	var portfolio_list={
+		Poster:{
+			Title:"Poster",
+			List:[
+				{Name:"pic1",url:"",img:""},
+				{Name:"pic1",url:"",img:""},
+				{Name:"pic1",url:"",img:""},
+				{Name:"pic1",url:"",img:""},
+			]
+		},Leaflet:{
+			Title:"Leaflet",
+			List:[
+				{Name:"pic1",url:"",img:""},
+				{Name:"pic1",url:"",img:""},
+			]
+		},Poster:{
+			Title:"Poster",
+			List:[
+				{Name:"pic1",url:"",img:""},
+				{Name:"pic1",url:"",img:""},
+				{Name:"pic1",url:"",img:""},
+			]
+		}
+	}
 	var course_list = ["程式設計概念與方法 Programming Concept and Methods", "資訊管理導論 Introduction to Information Management", "資料結構 Data Structures", "物件導向程式語言 Object-Oriented Programming Languages", "系統分析與設計 Systems Analysis and Design", "資料庫管理系統 Database Management Systems", "物件導向軟體工程 Object-Oriented Software Engineering", "管理資訊系統 Management Information Systems"]
 	var skill_list = {
 		Programming: {
@@ -275,7 +299,8 @@
 			]
 		},
 		Education: { School: "National Yunlin University of Science and Technology", Dep: "Information Management", Year: "Sep 2016 - Jun 2020", Info: "學習資訊管理相關知識", Course: course_list },
-		Skill: skill_list
+		Skill: skill_list,
+		Portfolio: portfolio_list
 	}
 	var app = new Vue({
 		el: "#app",
