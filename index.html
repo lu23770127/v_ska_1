@@ -82,9 +82,16 @@
 					</div><!-- col-sm-12 -->
 					<div class="col-sm-12 col-md-6" v-for="item in profile.Skill">
 						<h4><b>{{item.Title}}＿</b></h4>
-						<div v-for="list in item.List">
-							<p class="progress-title font-yellow"><b>{{list.Name}} － {{list.Score*100}}%</b></p>
+						<div v-for="list in item.List" class="mt-3">
+							<h6 class="progress-title font-yellow"><b> ．{{list.Name}} － {{list.Score*100}}%</b></h6>
+							<!-- <div class="progress mb-2 mt-2">
+								<div class="progress-bar" role="progressbar" :aria-valuenow="list.Score"
+									aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
+									<span class="sr-only">50%</span>
+								</div>
+							</div> -->
 						</div>
+						<hr>
 					</div><!-- col-md-6 -->
 				</div><!-- row -->
 			</div><!-- container -->
@@ -135,7 +142,7 @@
 				</div><!-- row -->
 			</div><!-- container -->
 		</section><!-- experience-section -->
-</div>
+	</div>
 
 	<footer>
 		<p class="copyright">
@@ -174,27 +181,27 @@
 </html>
 
 <script>
-	var portfolio_list={
-		Poster:{
-			Title:"Poster",
-			List:[
-				{Name:"pic1",url:"",img:""},
-				{Name:"pic1",url:"",img:""},
-				{Name:"pic1",url:"",img:""},
-				{Name:"pic1",url:"",img:""},
+	var portfolio_list = {
+		Poster: {
+			Title: "Poster",
+			List: [
+				{ Name: "pic1", url: "", img: "" },
+				{ Name: "pic1", url: "", img: "" },
+				{ Name: "pic1", url: "", img: "" },
+				{ Name: "pic1", url: "", img: "" },
 			]
-		},Leaflet:{
-			Title:"Leaflet",
-			List:[
-				{Name:"pic1",url:"",img:""},
-				{Name:"pic1",url:"",img:""},
+		}, Leaflet: {
+			Title: "Leaflet",
+			List: [
+				{ Name: "pic1", url: "", img: "" },
+				{ Name: "pic1", url: "", img: "" },
 			]
-		},Poster:{
-			Title:"Poster",
-			List:[
-				{Name:"pic1",url:"",img:""},
-				{Name:"pic1",url:"",img:""},
-				{Name:"pic1",url:"",img:""},
+		}, Poster: {
+			Title: "Poster",
+			List: [
+				{ Name: "pic1", url: "", img: "" },
+				{ Name: "pic1", url: "", img: "" },
+				{ Name: "pic1", url: "", img: "" },
 			]
 		}
 	}
